@@ -8,3 +8,5 @@ Cesar_FTP.py - a buffer overflow exploit, modified by me
 Ricoh_FTP.py - a buffer overflow exploit, modified by me
 
 realvnc.py - an authentication bypass attack on RealVNC 4.1.1 & 4.1.0, written by me.
+
+Soritong_MP3.py - Soritong MP3 v1.0 SEH exploit, written by me with help from corelan.be

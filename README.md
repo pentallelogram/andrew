@@ -15,3 +15,5 @@ FreeFloat_FTP.py - Free Float FTP v1.0 simple buffer overflow tested on Windows 
 
 DVD_X_Player - DVD X Player 5.5 Professional SEH buffer overflow. Creates a malicous .plf file that must be ran in a debugger since the SEH overflow vulnerability is behind a standard buffer overflow without SEH. Tested on Windows XP Pro SP3. Written by me with help from fuzzysecurity.com.
 
+Kolibri_HTTP.py - Kolibri Webserver v2.0 (2008-10-15) tested on Windows XP Pro SP3. Buffer overflow uses a small egg hunter to find large (743 byte) x86/alpha_mixed encoded shellcode.
+

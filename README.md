@@ -24,3 +24,7 @@ Mini_Stream_MP3.py - Mini-stream RM-MP3 Converter Version 3.1.2.1.2010.03.30, Bu
 IE_v7.html - A heap spray buffer overflow for Internet Explorer v7 and earlier. Tested on Windows XP SP3 x86. Written by Andrew Lewis with help from fuzzysecurity.com.
 
 CommuniCrypt.html - A heap spray buffer overflow for CommuniCrypt Mail on IE6 and 7, overwrites SEH handlers. Written by Andrew Lewis with help from Corelan.be.
+
+CoolPDFReader_316308.md - Quick Write-Up of an SEH overwrite on Cool PDF Reader 3.1.6.308. Discovered and Exploited by Andrew Lewis.
+
+CoolPDFReader_316308.pdf - Malicious PDF tested on Windows XP SP3 
